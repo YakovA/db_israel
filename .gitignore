@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Docker
+*.db
+*.sqlite3
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test & Coverage
+.coverage
+htmlcov/
+*.log
+
+# Jupyter
+.ipynb_checkpoints
+
+# Other
+*.bak
+*.swp
+*.tmp
+
+# Ignore local files
+local_settings.py
+
+# Node
+node_modules/
+
+# Ignore example env
+.env.example
+
+# Python virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Pytest
+.cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# pip
+pip-wheel-metadata/
+
+# Coverage reports
+.coverage*
+
+# PyInstaller
+*.spec
