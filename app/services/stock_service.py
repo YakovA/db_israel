@@ -3,7 +3,7 @@ This module contains the business logic for fetching and managing stock data.
 """
 import asyncio
 from typing import Dict
-from datetime import date
+from datetime import date, timedelta
 
 import cachetools
 from bs4 import BeautifulSoup
@@ -40,7 +40,8 @@ async def fetch_polygon(symbol: str) -> Stock:
         Stock: A dictionary containing the stock data from Polygon.
     """
     logger.info("Fetching polygon data", symbol=symbol)
-    url = POLYGON_URL.format(symbol=symbol.upper(), key=settings.POLYGON_API_KEY)
+    last_trade_date = date.today() - timedelta(days=1)
+    url = POLYGON_URL.format(symbol=symbol.upper(), key=settings.POLYGON_API_KEY, date=last_trade_date.strftime("%Y-%m-%d"))
     client = get_client()
     r = await client.get(url)
     if r.status_code != 200:
