@@ -6,6 +6,8 @@ __pycache__/
 *.env
 .env
 .env.*
+!.env.example
+
 
 # VSCode
 .vscode/
@@ -37,9 +39,6 @@ local_settings.py
 
 # Node
 node_modules/
-
-# Ignore example env
-.env.example
 
 # Python virtual environments
 venv/

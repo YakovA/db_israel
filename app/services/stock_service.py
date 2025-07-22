@@ -41,7 +41,7 @@ async def fetch_polygon(symbol: str) -> Stock:
     """
     logger.info("Fetching polygon data", symbol=symbol)
     last_trade_date = date.today() - timedelta(days=1)
-    url = POLYGON_URL.format(symbol=symbol.upper(), key=settings.POLYGON_API_KEY, date=last_trade_date.strftime("%Y-%m-%d"))
+    url = POLYGON_URL.format(symbol=symbol.upper(), key=settings.POLYGON_API_KEY, last_trade_day=last_trade_date.strftime("%Y-%m-%d"))
     client = get_client()
     r = await client.get(url)
     if r.status_code != 200:
